@@ -12,28 +12,28 @@ export class DataService {
 
   getLatestMovie(): Observable<any> {
     return this.http.get<any>(
-      this.url + '/movie/latest?api_key?' + environment.api_key
+      this.url + '/movie/latest?api_key=' + environment.api_key
     );
   }
   getPopularMovies(): Observable<Movie> {
     return this.http.get<any>(
-      this.url + '/movie/popular?api_key?' + environment.api_key
+      this.url + '/movie/popular?api_key=' + environment.api_key
     );
   }
 
   getTopRatedMovies(): Observable<Movie> {
     return this.http.get<any>(
-      this.url + '/movie/top_rated?api_key?' + environment.api_key
+      this.url + '/movie/top_rated?api_key=' + environment.api_key
     );
   }
   getNowPlayingMovies(): Observable<Movie> {
     return this.http.get<any>(
-      this.url + '/movie/now_playing?api_key?' + environment.api_key
+      this.url + '/movie/now_playing?api_key=' + environment.api_key
     );
   }
   getUpcomingMovies(): Observable<Movie> {
     return this.http.get<any>(
-      this.url + '/movie/upcoming?api_key?' + environment.api_key
+      this.url + '/movie/upcoming?api_key=' + environment.api_key
     );
   }
 }

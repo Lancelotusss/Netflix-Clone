@@ -1,6 +1,7 @@
 export interface Movie {
   page: number;
   results: [{
+    name: string;
     release_date: string;
     poster_path: string | null;
     adult: boolean;
