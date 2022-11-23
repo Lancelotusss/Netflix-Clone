@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { DataService } from '../services/data.service';
-import { Movie } from '../movie-sample';
+import { Movie } from '../models/movie-sample';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -16,23 +16,23 @@ export class DashboardComponent implements OnInit {
   constructor(private dataservice: DataService) {}
 
   ngOnInit(): void {
-    this.getLatestMovie()
-    this.getPopularMovies()
-    this.getTopRatedMovies()
-    this.getNowPlayingMovies()
-    this.getUpcomingMovies()
+    this.getLatestMovie();
+    this.getPopularMovies();
+    this.getTopRatedMovies();
+    this.getNowPlayingMovies();
+    this.getUpcomingMovies();
   }
 
   getLatestMovie() {
     this.dataservice.getLatestMovie().subscribe((res) => {
-      this.latestMovie = res;
-      console.log(this.latestMovie)
+      this.latestMovie = this.changeData(res);
+      console.log(this.latestMovie);
     });
   }
   getPopularMovies() {
     this.dataservice.getPopularMovies().subscribe((res) => {
       this.popularMovies = this.fixData(res);
-      console.log(this.popularMovies)
+      console.log(this.popularMovies);
     });
   }
   getTopRatedMovies() {
@@ -56,7 +56,7 @@ export class DashboardComponent implements OnInit {
         element.backdrop_path =
           'https://image.tmdb.org/t/p/original' +
           element.backdrop_path +
-          'api_key?' +
+          '?api_key=' +
           environment.api_key;
         if (!element.title) {
           element.title = element?.name;
@@ -64,5 +64,21 @@ export class DashboardComponent implements OnInit {
       });
       return movies;
     }
+  }
+  changeData(res: any): any {
+    if (!res.backdrop_path) {
+      res.backdrop_path =
+        'https://image.tmdb.org/t/p/original' +
+        res.poster_path +
+        '?api_key=' +
+        environment.api_key;
+    } else {
+      res.backdrop_path =
+        'https://image.tmdb.org/t/p/original' +
+        res.backdrop_path +
+        '?api_key=' +
+        environment.api_key;
+    }
+    return res;
   }
 }
