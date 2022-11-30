@@ -26,13 +26,13 @@ export class DashboardComponent implements OnInit {
   getLatestMovie() {
     this.dataservice.getLatestMovie().subscribe((res) => {
       this.latestMovie = this.changeData(res);
-      console.log(this.latestMovie);
+  
     });
   }
   getPopularMovies() {
     this.dataservice.getPopularMovies().subscribe((res) => {
       this.popularMovies = this.fixData(res);
-      console.log(this.popularMovies);
+
     });
   }
   getTopRatedMovies() {

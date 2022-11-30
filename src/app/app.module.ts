@@ -15,10 +15,22 @@ import { MatMenuModule } from '@angular/material/menu';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+
 import { environment } from '../environments/environment';
-import { provideAuth, getAuth } from '@angular/fire/auth'
-import {ReactiveFormsModule} from '@angular/forms';
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabase, AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { ReactiveFormsModule } from '@angular/forms';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { AuthService } from './services/auth.service';
+import { provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth } from '@angular/fire/auth';
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+
 
 @NgModule({
   declarations: [
@@ -42,10 +54,20 @@ import {ReactiveFormsModule} from '@angular/forms';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth())
+    provideAuth(() => getAuth()),
+    provideStorage(() => getFirestore()),
+    provideStorage(() => getStorage()),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
 
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AuthService,],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
+function getFirestore(): import("@firebase/storage").FirebaseStorage {
+  throw new Error('Function not implemented.');
+}
+
