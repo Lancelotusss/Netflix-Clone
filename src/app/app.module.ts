@@ -30,6 +30,7 @@ import { provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth } from '@angular/fire/auth';
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 
 
 @NgModule({
@@ -53,7 +54,7 @@ import { getAuth } from 'firebase/auth';
     MatMenuModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirebaseApp( () => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideStorage(() => getFirestore()),
     provideStorage(() => getStorage()),
@@ -63,7 +64,7 @@ import { getAuth } from 'firebase/auth';
     AngularFireDatabaseModule,
 
   ],
-  providers: [AuthService,],
+  providers: [AuthService,{provide: FIREBASE_OPTIONS, useValue: environment.firebase}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

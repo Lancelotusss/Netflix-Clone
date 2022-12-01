@@ -7,10 +7,15 @@
   />
 </a>
   <ng-container>
-  <div class="auth-box">
+  <div class="auth-box" *ngIf="!(afAuth.user | async)">
     <p class="auth-text">Join for unlimited movies & Tv shows</p>
     <button class="btn reg-button" routerLink='register'>Join Now</button>
     <button class="btn login-button" routerLink="login">Login</button>
+
   </div>
+  <div class="logo-image logged" *ngIf="(afAuth.user | async)">User is logged
+    <button class="btn login-button" (click)="logout()">logout</button>
+  </div>
+
 </ng-container>
 </nav>
