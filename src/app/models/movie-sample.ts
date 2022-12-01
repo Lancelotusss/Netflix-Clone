@@ -1,23 +1,27 @@
-export interface Movie {
+export interface Movies {
+  results?: (ResultsEntity)[] | null;
   page: number;
-  results: [{
-    name: string;
-    release_date: string;
-    poster_path: string | null;
-    adult: boolean;
-    overview: string;
-    genre_ids: number[] | null
-    id: number
-    original_title: string;
-    original_language: string
-    title: string
-    backdrop_path: string | null
-    popularity: number;
-    vote_count: number
-    video: boolean
-    vote_average: number
-  }
-  ]
-  total_results: number
-  total_pages: number
+  total_results: number;
+  dates: Dates;
+  total_pages: number;
+}
+export interface ResultsEntity {
+  popularity: number;
+  vote_count: number;
+  video: boolean;
+  poster_path: string;
+  id: number;
+  adult: boolean;
+  backdrop_path: string;
+  original_language: string;
+  original_title: string;
+  genre_ids?: (number)[] | null;
+  title: string;
+  vote_average: number;
+  overview: string;
+  release_date: string;
+}
+export interface Dates {
+  maximum: string;
+  minimum: string;
 }

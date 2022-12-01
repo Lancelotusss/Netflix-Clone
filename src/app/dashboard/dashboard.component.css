@@ -4,3 +4,9 @@
   box-sizing: border-box;
   margin-top: 63px
 }
+.container{
+  height: 300px;
+}
+img{
+height: 300px;
+}
