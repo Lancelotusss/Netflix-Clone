@@ -31,8 +31,9 @@ import { provideAuth } from '@angular/fire/auth';
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
-import { SliderDirective } from './slider.directive';
+import { SliderDirective } from './next.directive';
 import { CarouselComponent } from './carousel/carousel.component';
+import { PrevDirective } from './prev.directive';
 
 
 
@@ -46,6 +47,7 @@ import { CarouselComponent } from './carousel/carousel.component';
     RegisterComponent,
     SliderDirective,
     CarouselComponent,
+    PrevDirective,
   ],
   imports: [
     BrowserModule,
