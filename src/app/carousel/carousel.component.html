@@ -1,0 +1,30 @@
+<div>
+  <h2>Popular Movies</h2>
+</div>
+<div class="container1" *ngFor="let m of popular.results let i = index" >
+  <!-- <img src="{{m.backdrop_path}}" alt="{{m.title}}"> -->
+  <div class="card" *ngIf="i < 9">
+      <img class="img1" src="{{m.backdrop_path}}">
+      <div class="title">{{m.title}}</div>
+  </div>
+</div>
+<div>
+  <h2>Top Rated Movies</h2>
+</div>
+<div class="container1" *ngFor="let m of topRated.results let i = index" >
+  <!-- <img src="{{m.backdrop_path}}" alt="{{m.title}}"> -->
+  <div class="card" *ngIf="i < 9">
+      <img class="img1" src="{{m.backdrop_path}}">
+      <div class="title">{{m.title}}</div>
+  </div>
+</div>
+<div>
+  <h2>Now In Cinemas</h2>
+</div>
+<div class="container1" *ngFor="let m of nowPlaying.results let i = index" >
+  <!-- <img src="{{m.backdrop_path}}" alt="{{m.title}}"> -->
+  <div class="card" *ngIf="i < 9">
+      <img class="img1" src="{{m.backdrop_path}}">
+      <div class="title">{{m.title}}</div>
+  </div>
+</div>

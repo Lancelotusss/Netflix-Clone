@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     this.authService
       .login(email, password)
       .subscribe(() => {
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['']);
       });
   }
 }

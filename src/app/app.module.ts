@@ -31,6 +31,9 @@ import { provideAuth } from '@angular/fire/auth';
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { SliderDirective } from './slider.directive';
+import { CarouselComponent } from './carousel/carousel.component';
+
 
 
 @NgModule({
@@ -41,6 +44,8 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
     StickyDirective,
     LoginComponent,
     RegisterComponent,
+    SliderDirective,
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,

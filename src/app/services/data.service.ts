@@ -7,31 +7,28 @@ import { Movies } from '../models/movie-sample';
   providedIn: 'root',
 })
 export class DataService {
-  private URL = 'https://api.themoviedb.org/3';
+  private URL = 'https://api.themoviedb.org/3/movie/';
+  private API_KEY = environment.api_key
+
 
   constructor(private http: HttpClient) {}
 
-  getLatestMovie(): Observable<Movies> {
-    return this.http.get<Movies>(
-      this.URL + '/movie/popular?api_key=' + environment.api_key
-    );
-  }
 
   getNowPlaying(): Observable<Movies> {
     return this.http.get<Movies>(
-      this.URL + '/movie/popular?api_key=' + environment.api_key
-    );
+      this.URL + 'now_playing?api_key=' + this.API_KEY
+    )
   }
 
   getPopularMovies(): Observable<Movies> {
     return this.http.get<Movies>(
-      this.URL + '/movie/popular?api_key=' + environment.api_key
-    );
+      this.URL + 'popular?api_key=' + this.API_KEY
+    )
   }
 
   getTopRated(): Observable<Movies> {
     return this.http.get<Movies>(
-      this.URL + '/movie/top_rated?api_key=' + environment.api_key
-    );
+      this.URL + 'top_rated?api_key=' + this.API_KEY
+    )
   }
 }

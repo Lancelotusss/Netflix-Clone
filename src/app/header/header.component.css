@@ -13,6 +13,7 @@
   padding: 0 2vw;
   display: flex;
   align-items: center;
+  z-index:2;
 }
 .logo-image {
   height: 70%;
@@ -47,7 +48,7 @@
   font-size: 50px;
 }
 .main-info {
-  width: 50%;
+
   font-size: 20px;
   margin-top: 10px;
 }
@@ -58,6 +59,11 @@
   background-color: black;
   position: sticky;
   top: 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:2;
 }
 .logged {
   color: blueviolet;
