@@ -7,9 +7,9 @@ export class PrevDirective {
 
   constructor(private el: ElementRef) { }
   @HostListener('click')
-  nextSlide(){
-    var elm = this.el.nativeElement.parentElement
-    var card = elm.getElementsByClassName("card")
-    console.log("move left")
+  PrevSlide(){
+    var elm = this.el.nativeElement.parentElement.parentElement
+    var item = elm.getElementsByClassName("slider-main")
+    elm.prepend(item[item.length - 1])
     }
 }
