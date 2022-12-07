@@ -12,9 +12,5 @@ export class DashboardComponent implements OnInit {
   @Input() title: string;
   constructor() {}
 
-  ngOnInit(): void {
-
-  }
-
-
+  ngOnInit(): void {}
 }

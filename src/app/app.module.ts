@@ -21,8 +21,14 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireDatabase, AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import {
+  AngularFirestore,
+  AngularFirestoreModule,
+} from '@angular/fire/compat/firestore';
+import {
+  AngularFireDatabase,
+  AngularFireDatabaseModule,
+} from '@angular/fire/compat/database';
 import { ReactiveFormsModule } from '@angular/forms';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { AuthService } from './services/auth.service';
@@ -35,8 +41,6 @@ import { SliderDirective } from './next.directive';
 import { CarouselComponent } from './carousel/carousel.component';
 import { PrevDirective } from './prev.directive';
 import { MovieComponent } from './movie/movie.component';
-
-
 
 @NgModule({
   declarations: [
@@ -63,7 +67,7 @@ import { MovieComponent } from './movie/movie.component';
     MatMenuModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    provideFirebaseApp( () => initializeApp(environment.firebase)),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideStorage(() => getFirestore()),
     provideStorage(() => getStorage()),
@@ -71,13 +75,15 @@ import { MovieComponent } from './movie/movie.component';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
-
   ],
-  providers: [AuthService,{provide: FIREBASE_OPTIONS, useValue: environment.firebase}, SliderDirective],
+  providers: [
+    AuthService,
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebase },
+    SliderDirective,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-function getFirestore(): import("@firebase/storage").FirebaseStorage {
+function getFirestore(): import('@firebase/storage').FirebaseStorage {
   throw new Error('Function not implemented.');
 }
-

@@ -7,7 +7,11 @@
       <div class="slider-main" *ngFor="let m of popular.results; let i = index">
         <!-- <img src="{{m.backdrop_path}}" alt="{{m.title}}"> -->
         <div class="card" *ngIf="i < 20">
-          <img class="img1" src="{{ m.backdrop_path }}" [routerLink]="['/movie',m.id]" />
+          <img
+            class="img1"
+            src="{{ m.backdrop_path }}"
+            [routerLink]="['/movie', m.id]"
+          />
           <div class="title">{{ m.title }}</div>
           [routerLink]="['/movie'm.id]"
         </div>
@@ -25,12 +29,18 @@
 <section class="product">
   <div class="container-fluid">
     <div class="slider-wrap">
-      <div class="slider-main" *ngFor="let m of topRated.results; let i = index">
+      <div
+        class="slider-main"
+        *ngFor="let m of topRated.results; let i = index"
+      >
         <!-- <img src="{{m.backdrop_path}}" alt="{{m.title}}"> -->
-        <div class="card" *ngIf="i < 20" >
-          <img class="img1" src="{{ m.backdrop_path }}" [routerLink]="['/movie',m.id]"/>
+        <div class="card" *ngIf="i < 20">
+          <img
+            class="img1"
+            src="{{ m.backdrop_path }}"
+            [routerLink]="['/movie', m.id]"
+          />
           <div class="title">{{ m.title }}</div>
-
         </div>
       </div>
       <div class="buttom-area">
@@ -52,16 +62,17 @@
       >
         <!-- <img src="{{m.backdrop_path}}" alt="{{m.title}}"> -->
         <div class="card" *ngIf="i < 20">
-
-          <img class="img1" src="{{ m.backdrop_path }}"  [routerLink]="['/movie',m.id]"/>
+          <img
+            class="img1"
+            src="{{ m.backdrop_path }}"
+            [routerLink]="['/movie', m.id]"
+          />
           <div class="title">{{ m.title }}</div>
           [routerLink]="['/movie'm.id]"
-
-
-    </div>
+        </div>
       </div>
       <div class="buttom-area">
-        <button type="button" class="prev"appPrev>prev<</button>
+        <button type="button" class="prev" appPrev>prev<</button>
         <button type="button" class="next" appnext>next></button>
       </div>
     </div>

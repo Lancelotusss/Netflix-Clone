@@ -9,15 +9,14 @@ import { LoginComponent } from '../login/login.component';
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.css']
+  styleUrls: ['./carousel.component.css'],
 })
-
 export class CarouselComponent implements OnInit {
   popular: Movies;
   topRated: Movies;
 
   nowPlaying: Movies;
-  constructor(private dataService: DataService, public next: SliderDirective) { }
+  constructor(private dataService: DataService, public next: SliderDirective) {}
   ngOnInit(): void {
     this.getNowPlaying();
     this.getPopularMovies();
@@ -50,5 +49,4 @@ export class CarouselComponent implements OnInit {
     }
     return movies;
   }
-
 }

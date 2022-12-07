@@ -9,7 +9,6 @@ import { BehaviorSubject, concatMap, from, Observable, of } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-
 export class AuthService {
   loggedIn = new BehaviorSubject<boolean>(false);
   loggedIn$ = this.loggedIn.asObservable();
@@ -22,6 +21,6 @@ export class AuthService {
     return from(signInWithEmailAndPassword(this.auth, username, password));
   }
   singOut() {
-  return from(this.auth.signOut())
-}
+    return from(this.auth.signOut());
+  }
 }

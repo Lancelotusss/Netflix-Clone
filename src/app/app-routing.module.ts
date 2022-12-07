@@ -11,10 +11,10 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, pathMatch: 'full' },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
   },
-  { path: 'login', component: LoginComponent, },
-  {path:'movie/:id',component:MovieComponent}
+  { path: 'login', component: LoginComponent },
+  { path: 'movie/:id', component: MovieComponent, pathMatch: 'prefix' },
 ];
 
 @NgModule({

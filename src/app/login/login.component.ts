@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
-import { NonNullableFormBuilder,} from '@angular/forms';
+import { NonNullableFormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   loginForm = this.fb.group({
@@ -37,10 +37,8 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    this.authService
-      .login(email, password)
-      .subscribe(() => {
-        this.router.navigate(['']);
-      });
+    this.authService.login(email, password).subscribe(() => {
+      this.router.navigate(['']);
+    });
   }
 }

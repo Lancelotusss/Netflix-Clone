@@ -1,5 +1,4 @@
-
-.form-container{
+.form-container {
   margin: auto;
   width: fit-content;
   padding: 10px;
@@ -10,9 +9,8 @@
   position: absolute;
   left: 35%;
   top: 15%;
-
 }
-.reg{
+.reg {
   border: none;
   border-radius: 3px;
   background-color: rgb(20, 114, 94);

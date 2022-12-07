@@ -1,6 +1,6 @@
 export interface Movies {
   page: number;
-  results?: (ResultsEntity)[] | null;
+  results?: ResultsEntity[] | null;
   dates: Dates;
   total_pages: number;
   total_results: number;
@@ -10,7 +10,7 @@ export interface ResultsEntity {
   adult: boolean;
   overview: string;
   release_date: string;
-  genre_ids?: (number)[] | null;
+  genre_ids?: number[] | null;
   id: number;
   original_title: string;
   original_language: string;
