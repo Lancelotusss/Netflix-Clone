@@ -3,18 +3,21 @@ import { DataService } from '../services/data.service';
 import { AppComponent } from '../app.component';
 import { Movies } from '../models/movie-sample';
 import { environment } from 'src/environments/environment';
+import { SliderDirective } from '../next.directive';
+import { TmplAstRecursiveVisitor } from '@angular/compiler';
+import { LoginComponent } from '../login/login.component';
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css']
 })
+
 export class CarouselComponent implements OnInit {
   popular: Movies;
   topRated: Movies;
 
   nowPlaying: Movies;
-
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, public next: SliderDirective) { }
   ngOnInit(): void {
     this.getNowPlaying();
     this.getPopularMovies();
@@ -28,7 +31,6 @@ export class CarouselComponent implements OnInit {
   getTopRated() {
     this.dataService.getTopRated().subscribe((res) => {
       this.topRated = this.modifyData(res);
-      console.log(this.topRated.results[0].backdrop_path)
     });
   }
   getPopularMovies() {
@@ -48,4 +50,5 @@ export class CarouselComponent implements OnInit {
     }
     return movies;
   }
+
 }

@@ -11,7 +11,7 @@ export class DataService {
   private API_KEY = environment.api_key
 
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
 
   getNowPlaying(): Observable<Movies> {
@@ -30,5 +30,11 @@ export class DataService {
     return this.http.get<Movies>(
       this.URL + 'top_rated?api_key=' + this.API_KEY
     )
+  }
+  getMovieDetails(data: any): Observable<any> {
+    return this.http.get(`${this.URL}${data}?api_key=${this.API_KEY}`)
+  }
+  getMovieCast(data: any): Observable<any> {
+    return this.http.get(`${this.URL}${data}/credits?api_key=${this.API_KEY}`)
   }
 }

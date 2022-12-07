@@ -34,6 +34,7 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { SliderDirective } from './next.directive';
 import { CarouselComponent } from './carousel/carousel.component';
 import { PrevDirective } from './prev.directive';
+import { MovieComponent } from './movie/movie.component';
 
 
 
@@ -48,6 +49,7 @@ import { PrevDirective } from './prev.directive';
     SliderDirective,
     CarouselComponent,
     PrevDirective,
+    MovieComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +73,7 @@ import { PrevDirective } from './prev.directive';
     AngularFireDatabaseModule,
 
   ],
-  providers: [AuthService,{provide: FIREBASE_OPTIONS, useValue: environment.firebase}],
+  providers: [AuthService,{provide: FIREBASE_OPTIONS, useValue: environment.firebase}, SliderDirective],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

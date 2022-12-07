@@ -1,4 +1,4 @@
-*{
+.container{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,12 +8,13 @@
 }
 h2{
   height: 200px;
-  background-color: rgb(26, 4, 53);
+  background-color: #010e1b;
   width: 100vw;
   color: aquamarine;
   font-size: 30px;
+  font-weight: 300;
   font-family: fantasy;
   text-align: center;
   padding-top: 80px;
-  background-image: linear-gradient(45deg, #381753, #3b0917);
+
 }

@@ -1,14 +1,20 @@
-*{
-  display: block;
-}
 
 .form-container{
   margin: auto;
   width: fit-content;
   padding: 10px;
   margin-top: 70px;
-  background-color: blanchedalmond;
+  background-color: rgb(140, 150, 204);
   border-radius: 14px;
   border: 2px solid rgb(30, 3, 36);
+  position: absolute;
+  left: 35%;
+  top: 15%;
 
+}
+.reg{
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(20, 114, 94);
+  color: azure;
 }

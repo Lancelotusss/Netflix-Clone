@@ -1,8 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 .navbar {
   width: 100%;
   height: 62px;
@@ -37,6 +33,9 @@
 }
 .auth-text {
   color: rgb(83, 49, 145);
+  font-weight: 800;
+  font-size: large;
+  margin-top: 6px;
 }
 .reg-button {
   background: rgb(88, 16, 88);
@@ -66,5 +65,8 @@
   z-index:2;
 }
 .logged {
-  color: blueviolet;
+  color: rgb(83, 49, 145);
+  font-weight: 800;
+  font-size: large;
+  margin-top: 6px;
 }
