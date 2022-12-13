@@ -38,7 +38,7 @@ export class CarouselComponent implements OnInit {
     });
   }
   modifyData(movies: Movies): Movies {
-    if (movies.results) {
+    if (movies?.results) {
       movies.results.forEach((el) => {
         el.backdrop_path =
           'https://image.tmdb.org/t/p/original' +

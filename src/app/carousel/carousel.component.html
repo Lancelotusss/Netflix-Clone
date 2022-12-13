@@ -4,7 +4,10 @@
 <section class="product">
   <div class="container-fluid">
     <div class="slider-wrap">
-      <div class="slider-main" *ngFor="let m of popular.results; let i = index">
+      <div
+        class="slider-main"
+        *ngFor="let m of popular?.results; let i = index"
+      >
         <!-- <img src="{{m.backdrop_path}}" alt="{{m.title}}"> -->
         <div class="card" *ngIf="i < 20">
           <img
@@ -31,7 +34,7 @@
     <div class="slider-wrap">
       <div
         class="slider-main"
-        *ngFor="let m of topRated.results; let i = index"
+        *ngFor="let m of topRated?.results; let i = index"
       >
         <!-- <img src="{{m.backdrop_path}}" alt="{{m.title}}"> -->
         <div class="card" *ngIf="i < 20">
@@ -58,7 +61,7 @@
     <div class="slider-wrap">
       <div
         class="slider-main"
-        *ngFor="let m of nowPlaying.results; let i = index"
+        *ngFor="let m of nowPlaying?.results; let i = index"
       >
         <!-- <img src="{{m.backdrop_path}}" alt="{{m.title}}"> -->
         <div class="card" *ngIf="i < 20">

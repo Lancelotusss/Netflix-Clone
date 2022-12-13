@@ -11,13 +11,11 @@ export class HeaderComponent implements OnInit {
   constructor(
     public afAuth: AngularFireAuth,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit(): void {}
   logout() {
-    this.authService.singOut().subscribe(() => {
-      this.router.navigate(['/']);
-    });
+   this.authService.signOut()
   }
 }

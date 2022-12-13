@@ -41,6 +41,10 @@ import { SliderDirective } from './next.directive';
 import { CarouselComponent } from './carousel/carousel.component';
 import { PrevDirective } from './prev.directive';
 import { MovieComponent } from './movie/movie.component';
+import { LoggedInAuthGuard } from './guards.guard';
+import { JwtHelperService, JWT_OPTIONS  } from '@auth0/angular-jwt';
+
+
 
 @NgModule({
   declarations: [
@@ -54,6 +58,7 @@ import { MovieComponent } from './movie/movie.component';
     CarouselComponent,
     PrevDirective,
     MovieComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -75,11 +80,14 @@ import { MovieComponent } from './movie/movie.component';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+
   ],
   providers: [
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService,
     AuthService,
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase },
-    SliderDirective,
+    SliderDirective,LoggedInAuthGuard
   ],
   bootstrap: [AppComponent],
 })

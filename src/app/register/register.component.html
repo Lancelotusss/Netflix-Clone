@@ -1,13 +1,14 @@
 <div class="form-container mat-elevation-z5">
   <h1>Sign Up a New User!</h1>
   <form [formGroup]="signUpForm" (ngSubmit)="submit()">
-    <mat-form-field>
+    <mat-form-field autocomplete="off">
       <input
         matInput
         placeholder="Email address"
         type="email"
         class="formControl"
         formControlName="email"
+        autocomplete="off"
       />
       <mat-error *ngIf="email?.errors?.['required']">
         Email address is required
@@ -16,13 +17,14 @@
         Please enter a valid email address
       </mat-error>
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field autocomplete="off">
       <input
         matInput
         type="password"
         placeholder="Password"
         class="formControl"
         formControlName="password"
+        autocomplete="off"
       />
       <mat-error *ngIf="password?.errors?.['required']">
         Password is required
